@@ -28,9 +28,10 @@ public class Car {
         this.id = id;
     }
 
-    public Car (){}
+    public Car() {
+    }
 
-    public Car (String model, int series) {
+    public Car(String model, int series) {
         this.model = model;
         this.series = series;
     }
