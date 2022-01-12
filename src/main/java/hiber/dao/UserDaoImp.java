@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -20,8 +21,8 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public List listUsers() {
-        Query query = sessionFactory.getCurrentSession().createQuery("from User");
+    public List<User> listUsers() {
+        TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User", User.class);
         return query.getResultList();
     }
 
